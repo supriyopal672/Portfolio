@@ -1,3 +1,4 @@
+alert("This Website is still not responsive yet, Please view it Desktop Site");
 const pageTurnBtn = document.querySelectorAll('.nextprev-btn');
 
 pageTurnBtn.forEach((el, index) => {
