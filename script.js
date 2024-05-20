@@ -10,8 +10,7 @@ pageTurnBtn.forEach((el, index) => {
             setTimeout(() => {
                 pageTurn.style.zIndex = 20 - index;
             }, 500)
-        }
-        else {
+        }else {
             pageTurn.classList.add('turn');
             setTimeout(() => {
                 pageTurn.style.zIndex = 20 + index;
@@ -29,9 +28,9 @@ contactMeBtn.onclick = () => {
             page.classList.add('turn');
 
             setTimeout(() => {
-                page.style.zIndex = 20 + index;
+                page.style.zIndex = 23 + index;
             }, 500)
-        }, (index + 1)* 200 + 100)
+        }, (index + 1) * 200 + 100)
     })
 }
 
@@ -56,6 +55,34 @@ backProfileBtn.onclick = () => {
             setTimeout(() => {
                 pages[pageNumber].style.zIndex = 10 + index;
             }, 500)
-        }, (index + 1)*200 + 100)
+        }, (index + 1) * 200 + 100)
     })
 }
+
+const coverRight = document.querySelector('.cover.cover-right');
+const pageLeft = document.querySelector('.book-page.page-left');
+
+
+
+setTimeout(() => {
+    coverRight.classList.add('turn');
+}, 2100)
+
+setTimeout(() => {
+    coverRight.style.zIndex = -1;
+}, 2800)
+
+setTimeout(() => {
+    pageLeft.style.zIndex = 20;
+}, 3200)
+
+pages.forEach((_, index) => {
+    setTimeout(() => {
+        reverseIndex();
+        pages[pageNumber].classList.remove('turn');
+
+        setTimeout(() => {
+            pages[pageNumber].style.zIndex = 10 + index;
+        }, 500)
+    }, (index + 1) * 200 + 2100)
+})
